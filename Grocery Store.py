@@ -162,9 +162,11 @@ class GroceryStore:
 
             if user_choice == 1:
                 self.customer()
+                self.get_feedback()
                 break
             elif user_choice == 2:
                 self.Admin()
+                break
             elif user_choice == 3:
                 break
             else:
@@ -172,4 +174,3 @@ class GroceryStore:
 
 my_grocery_store = GroceryStore()
 my_grocery_store.display()
-my_grocery_store.get_feedback()
