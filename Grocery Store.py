@@ -8,12 +8,16 @@ class GroceryStore:
             "Sooper": {"Price": 15, "Quantity": 100, "Company_name": "Peak Freans", "Selling_Price": 20}
     }
 
-        
         self.customer_products = {
             "Lays": {"Price": 20, "Quantity": 100, "Company_name": "Lays"},
             "Pepsi": {"Price": 70, "Quantity": 100, "Company_name": "Pepsico International"},
             "Sooper": {"Price": 15, "Quantity":100, "Companay_name": "Peak Freans"}
         }
+    def show_customer_products(self):
+        print("****Available Products****")
+        for index, (item, details) in enumerate(self.customer_products.items(), start=1):
+            if 'Price' in details:
+                print(f"{index}. {item}: {details['Price']}")
 
     def view_products(self, products):
         if not self.admin_products:
@@ -99,6 +103,7 @@ class GroceryStore:
     
     def customer(self):
         self.customer_name = input("\nEnter your name: ")
+        self.show_customer_products()
         selected_items = []
         while True:
             item_name = input("Enter the item name or 'exit' to finish: ")
